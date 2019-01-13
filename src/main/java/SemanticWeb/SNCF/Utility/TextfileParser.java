@@ -1,7 +1,12 @@
 package SemanticWeb.SNCF.Utility;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ResourceUtils;
+
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 @Service
@@ -12,7 +17,7 @@ public class TextfileParser {
         List<String> routeid = new java.util.ArrayList<String>();
         List<String> route_long_name = new java.util.ArrayList<String>();
         List<List<String>> routes_file = new java.util.ArrayList<List<String>>();
-        String fileRoute = "C://Users/murad/Desktop/cps2/M2/Semantic web/SNCF/SNCF/files/routes.txt";
+        String fileRoute = "files/routes.txt";
         int i = 0;
         try{
             FileReader file = new FileReader(fileRoute);
@@ -37,7 +42,7 @@ public class TextfileParser {
         List<String> routeid = new java.util.ArrayList<String>();
         List<String> TripID = new java.util.ArrayList<String>();
         List<List<String>> Trip_file = new java.util.ArrayList<List<String>>();
-        String fileRoute = "C://Users/murad/Desktop/cps2/M2/Semantic web/SNCF/SNCF/files/trips.txt";
+        String fileRoute = "files/trips.txt";
         int i = 0;
         try{
             FileReader file = new FileReader(fileRoute);
@@ -64,7 +69,7 @@ public class TextfileParser {
         List<String> stop_lat = new java.util.ArrayList<String>();
         List<String> stop_long = new java.util.ArrayList<String>();
         List<List<String>> stops_file = new java.util.ArrayList<List<String>>();
-        String fileRoute = "C://Users/murad/Desktop/cps2/M2/Semantic web/SNCF/SNCF/files/stops.txt";
+        String fileRoute = "files/stops.txt";
         int i = 0;
         try{
             FileReader file = new FileReader(fileRoute);
@@ -96,7 +101,7 @@ public class TextfileParser {
         List<String> dep_time = new java.util.ArrayList<String>();
         List<String> stopid = new java.util.ArrayList<String>();
         List<List<String>> stoptimes_file = new java.util.ArrayList<List<String>>();
-        String fileRoute = "C://Users/murad/Desktop/cps2/M2/Semantic web/SNCF/SNCF/files/stop_times.txt";
+        String fileRoute = "files/stop_times.txt";
         int i = 0;
         try{
             FileReader file = new FileReader(fileRoute);
