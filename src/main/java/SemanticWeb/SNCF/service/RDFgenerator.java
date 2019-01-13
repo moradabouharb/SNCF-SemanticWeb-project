@@ -29,6 +29,9 @@ public class RDFgenerator {
         Property rdftype = model.createProperty(RDF.getURI(), "type");
         Property propertytrip = model.createProperty(db, "Trip");
         Property propertyroute = model.createProperty(owl, "route");
+        Property timetravel = model.createProperty(owl, "Time_travel");
+        Property endpoint = model.createProperty(owl, "endPoint");
+
         for(int i=1; i<list1.get(0).size(); i++) {
             Resource route = model.createResource(list1.get(0).get(i));
             Literal routename = model.createTypedLiteral(list1.get(1).get(i),XSD.xstring.getURI());
@@ -48,14 +51,21 @@ public class RDFgenerator {
        		System.out.println(list3.get(2).get(i));
        		System.out.println(list3.get(3).get(i));
        	}
-
+*/
         for(int i=1; i<list4.get(0).size(); i++) {
+            Resource trip = model.createResource(list4.get(0).get(i));
+            Literal departuretime = model.createTypedLiteral(list4.get(2).get(i),XSD.time.getURI());
+            model.add(trip,rdftype,propertytrip);
+            model.add(trip,timetravel,departuretime);
+            model.add(trip, endpoint, list4.get(3).get(i),XSD.xstring.getURI());
+            /*
        		System.out.println(list4.get(0).get(i));
        		System.out.println(list4.get(1).get(i));
        		System.out.println(list4.get(2).get(i));
        		System.out.println(list4.get(3).get(i));
+       		*/
        	}
-       	*/
+
         model.write(out,"turtle");
         return out.toString();
     }
