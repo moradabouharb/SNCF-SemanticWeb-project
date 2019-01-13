@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.jena:jena-dboe-trans-data:3.9.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.jena/jena-dboe-trans-data/3.9.0/fb6e44296842cd7c1f374c9b6cf36a4a7babd8d8/jena-dboe-trans-data-3.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.jena/jena-dboe-trans-data/3.9.0/7dc38aa7173425e941f2a0f7ba740e1f705dfe81/jena-dboe-trans-data-3.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

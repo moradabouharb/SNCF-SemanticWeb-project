@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.jena:jena-base:3.9.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.jena/jena-base/3.9.0/9e4acf03fa31d4408ab6aafc492e8595de2fe731/jena-base-3.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.jena/jena-base/3.9.0/cba2a11b8d1b4636f0836e5125c6b5b62cde121e/jena-base-3.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

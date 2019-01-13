@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.jena:jena-dboe-index:3.9.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.jena/jena-dboe-index/3.9.0/4f9d134b1fc2caf43baad59e4decf3bb64d6dbdb/jena-dboe-index-3.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.jena/jena-dboe-index/3.9.0/b602643a7642887ba423fe99742e835f2751ea82/jena-dboe-index-3.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
