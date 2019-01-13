@@ -19,10 +19,14 @@ public class RDFgenerator {
         final String rdfs = "http://www.w3.org/2000/01/rdf-schema#";
         final String owl = "http://dbpedia.org/ontology/";
         final String db = "dbpedia.org/resource/";
+        final String xsdString = XSD.xstring.getURI();
+        final String xsdTime = XSD.time.getURI();
         model.setNsPrefix("rdfs",rdfs);
         model.setNsPrefix("rdf", RDF.getURI());
         model.setNsPrefix("owl", owl);
         model.setNsPrefix("db", db);
+        model.setNsPrefix("xsdString", xsdString);
+        model.setNsPrefix("xsdTime", xsdTime);
 
         Property routelebel = model.createProperty(rdfs, "label");
         Property routeOfTransportation = model.createProperty(owl, "RouteOfTransportation");
@@ -34,7 +38,7 @@ public class RDFgenerator {
 
         for(int i=1; i<list1.get(0).size(); i++) {
             Resource route = model.createResource(list1.get(0).get(i));
-            Literal routename = model.createTypedLiteral(list1.get(1).get(i),XSD.xstring.getURI());
+            Literal routename = model.createTypedLiteral(list1.get(1).get(i),xsdString);
             model.add(route,routelebel,routename);
             model.add(route,rdftype,routeOfTransportation);
         }
@@ -54,10 +58,11 @@ public class RDFgenerator {
 */
         for(int i=1; i<list4.get(0).size(); i++) {
             Resource trip = model.createResource(list4.get(0).get(i));
-            Literal departuretime = model.createTypedLiteral(list4.get(2).get(i),XSD.time.getURI());
+            Literal departuretime = model.createTypedLiteral(list4.get(2).get(i),xsdTime);
+            Literal literalendpoint = model.createTypedLiteral(list4.get(3).get(i),xsdString);
             model.add(trip,rdftype,propertytrip);
             model.add(trip,timetravel,departuretime);
-            model.add(trip, endpoint, list4.get(3).get(i),XSD.xstring.getURI());
+            model.add(trip, endpoint, literalendpoint);
             /*
        		System.out.println(list4.get(0).get(i));
        		System.out.println(list4.get(1).get(i));
