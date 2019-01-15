@@ -5,6 +5,7 @@ import SemanticWeb.SNCF.service.RDFgenerator;
 import SemanticWeb.SNCF.service.Service1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,15 +22,27 @@ public class TurtleController {
     private List<String> formats = new ArrayList<String>(Arrays.asList("TURTLE", "TTL", "Turtle", "N-TRIPLES", "N-TRIPLE", "NT", "JSON-LD", "RDF/XML-ABBREV", "RDF/XML", "N3", "RDF/JSON"));
 
     @Autowired
-    RDFgenerator RG;
+    private RDFgenerator RG;
 
     @Autowired
-    TextfileParser TP;
+    private TextfileParser TP;
+
+    @Autowired
+    private Service1 service1;
 
     @GetMapping(value = "turtle",produces = {"text/plain"})
     public @ResponseBody
     String rdfturtle(){
         return RG.RDF(TP.FileRoutesParser(),TP.FileTripParser(),TP.FileStopsParser(),TP.FileStoptimesParser());
+    }
+
+    @GetMapping("/query1")
+    public String GetLocalQuery(Model model){
+
+
+
+
+        return "query1";
     }
 
 

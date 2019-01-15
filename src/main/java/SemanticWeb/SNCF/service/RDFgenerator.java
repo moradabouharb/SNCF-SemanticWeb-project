@@ -1,11 +1,12 @@
 package SemanticWeb.SNCF.service;
-import com.github.jsonldjava.core.RDFDataset;
-import org.apache.jena.graph.Node_Blank;
-import org.apache.jena.vocabulary.XSD;
+
+import SemanticWeb.SNCF.Utility.TextfileParser;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.RDF;
+import org.apache.jena.vocabulary.XSD;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.apache.jena.rdf.model.ModelFactory;
+
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.List;
@@ -13,8 +14,19 @@ import java.util.List;
 @Service
 public class RDFgenerator {
 
+    @Autowired
+    private TextfileParser TP;
+
     public String RDF(List<List<String>> list1, List<List<String>> list2, List<List<String>> list3, List<List<String>> list4){
         Writer out = new StringWriter();
+        return getModel(list1, list2, list3, list4).write(out,"turtle").toString();
+    }
+
+    public Model RDF(){
+        return getModel(TP.FileRoutesParser(),TP.FileTripParser(),TP.FileStopsParser(),TP.FileStoptimesParser());
+    }
+
+    private Model getModel(List<List<String>> list1, List<List<String>> list2, List<List<String>> list3, List<List<String>> list4) {
         Model model = ModelFactory.createDefaultModel();
         final String rdfs = "http://www.w3.org/2000/01/rdf-schema#";
         final String owl = "http://dbpedia.org/ontology/";
@@ -76,7 +88,6 @@ public class RDFgenerator {
             model.add(trip, endpoint, literalendpoint);
        	}
 
-        model.write(out,"turtle");
-        return out.toString();
+        return model;
     }
 }
