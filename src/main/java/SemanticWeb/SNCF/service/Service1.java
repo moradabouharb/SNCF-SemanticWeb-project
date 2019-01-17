@@ -27,9 +27,24 @@ public class Service1 {
         return result;
     }
 
+    public static Model SendQuery(String url, String query){
+        QueryExecution qexec = QueryExecutionFactory.sparqlService(url, query);
+        return qexec.execConstruct();
+    }
+
     public QueryExecution LocalSparQuery(String query){
 
         Model model = RG.RDF();
+        if (model != null){
+            Query query1 = QueryFactory.create(query);
+            QueryExecution qexec = QueryExecutionFactory.create(query1, model);
+            return qexec;
+        }else
+            return null;
+    }
+
+    public QueryExecution LocalSparQuery(String query, Model model){
+
         if (model != null){
             Query query1 = QueryFactory.create(query);
             QueryExecution qexec = QueryExecutionFactory.create(query1, model);

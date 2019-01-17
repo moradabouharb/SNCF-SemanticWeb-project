@@ -42,7 +42,26 @@
                 <button type="submit" class="btn btn-primary btn-block my-1">Submit</button>
             </form>
 
-            <div class="text-center text-info" th:if="${result}" th:utext="${result}"></div>
+            <div class="text-center text-info" th:if="${result}">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Second</th>
+                        <th scope="col">Predict</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="item, index : ${result}">
+                        <th scope="row" th:utext="${index.index}"></th>
+                        <td th:utext="${item.getObject()}"></td>
+                        <td th:utext="${item.getSubject()}"></td>
+                        <td th:utext="${item.getPredicate().toString()}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
             <!--<div class="text-center" th:if="${result}" th:utext="${result}">-->
                 <!--<textarea th:utext="${result}"></textarea>-->
             <!--</div>-->

@@ -1,4 +1,4 @@
-<!Doctype html>
+    <!Doctype html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -14,17 +14,24 @@
 </head>
 <body>
 <div class="text-center">
-    <h1>Local SPARQL</h1>
+    <h1>SPARQL and File</h1>
     <div class="container justify-content-md-center">
         <div class="col col-md-8">
 
-            <form th:action="@{/query1}" id="form1" method="post">
+            <form th:action="@{/query2}" id="form1" method="post">
 
                 <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="format" form="form1">
                     <!--<option selected>Choose...</option>-->
                     <option th:each="type: ${formats}" th:value="${type}" th:utext="${type}"></option>
                 </select>
 
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">RDF</span>
+                    </div>
+                    <textarea th:utext="${path}" name="path" class="form-control" aria-label="With textarea" form="form1"></textarea>
+                </div>
 
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -40,22 +47,6 @@
                 <!--<textarea th:utext="${result}"></textarea>-->
             <!--</div>-->
         </div>
-    </div>
-    <div th:if="${list}">
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Value</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="item, index : ${list}">
-                <th scope="row" th:utext="${index.index}">1</th>
-                <td th:utext="${item}"></td>
-            </tr>
-            </tbody>
-        </table>
     </div>
 </div>
 

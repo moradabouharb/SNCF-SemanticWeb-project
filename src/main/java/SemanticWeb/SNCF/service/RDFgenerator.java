@@ -19,7 +19,8 @@ public class RDFgenerator {
 
     public String RDF(List<List<String>> list1, List<List<String>> list2, List<List<String>> list3, List<List<String>> list4){
         Writer out = new StringWriter();
-        return getModel(list1, list2, list3, list4).write(out,"turtle").toString();
+        Model model = getModel(list1, list2, list3, list4);
+        return model.write(out,"turtle").toString();
     }
 
     public Model RDF(){
