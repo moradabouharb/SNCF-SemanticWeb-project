@@ -35,6 +35,9 @@ public class RDFgenerator {
         final String geo = "http://www.w3.org/2003/01/geo/wgs84_pos#";
         final String latitude = "http://www.w3.org/2003/01/geo/wgs84_pos#lat";
         final String longitude = "http://www.w3.org/2003/01/geo/wgs84_pos#long";
+        final String Proute = "http://localhost/route#";
+        final String Ptrip = "http://localhost/trip#";
+        final String Pstop = "http://localhost/stop#";
         final String xsdString = XSD.xstring.getURI();
         final String xsdTime = XSD.time.getURI();
         model.setNsPrefix("rdfs",rdfs);
@@ -46,6 +49,9 @@ public class RDFgenerator {
         model.setNsPrefix("geo", geo);
         model.setNsPrefix("latitude", latitude);
         model.setNsPrefix("longitude", longitude);
+        model.setNsPrefix("Proute", Proute);
+        model.setNsPrefix("Ptrip", Ptrip);
+        model.setNsPrefix("Pstop", Pstop);
         Property routelebel = model.createProperty(rdfs, "label");
         Property routeOfTransportation = model.createProperty(owl, "RouteOfTransportation");
         Property rdftype = model.createProperty(RDF.getURI(), "type");
@@ -57,20 +63,18 @@ public class RDFgenerator {
         Property longi = model.createProperty(owl, "longitude");
 
         for(int i=1; i<list1.get(0).size(); i++) {
-            Resource route = model.createResource(list1.get(0).get(i));
+            Resource route = model.createProperty(Proute,list1.get(0).get(i));
             Literal routename = model.createTypedLiteral(list1.get(1).get(i),xsdString);
             model.add(route,routelebel,routename);
             model.add(route,rdftype,routeOfTransportation);
         }
-
         for(int i=1; i<list2.get(0).size(); i++) {
-            Resource trip = model.createResource(list2.get(1).get(i));
+            Resource trip = model.createProperty(Ptrip,list2.get(1).get(i));
             model.add(trip,rdftype,propertytrip);
             model.add(trip,propertyroute,list2.get(0).get(i));
-       	}
-
+        }
         for(int i=1; i<list3.get(0).size(); i++) {
-            Resource stop = model.createResource(list3.get(0).get(i));
+            Resource stop = model.createProperty(Pstop,list3.get(0).get(i));
             Literal latitudelet = model.createTypedLiteral(list3.get(2).get(i),latitude);
             Literal longitudelet = model.createTypedLiteral(list3.get(3).get(i),longitude);
             Literal endpointname = model.createTypedLiteral(list3.get(1).get(i),xsdString);
@@ -78,17 +82,15 @@ public class RDFgenerator {
             model.add(stop, lat, latitudelet);
             model.add(stop, longi, longitudelet);
             model.add(stop, rdftype, endpoint);
-       	}
-
+        }
         for(int i=1; i<list4.get(0).size(); i++) {
-            Resource trip = model.createResource(list4.get(0).get(i));
+            Resource trip = model.createProperty(Ptrip,list4.get(0).get(i));
             Literal departuretime = model.createTypedLiteral(list4.get(2).get(i),xsdTime);
             Literal literalendpoint = model.createTypedLiteral(list4.get(3).get(i),xsdString);
             model.add(trip,rdftype,propertytrip);
             model.add(trip,timetravel,departuretime);
             model.add(trip, endpoint, literalendpoint);
-       	}
-
+        }
         return model;
     }
 }
