@@ -55,10 +55,10 @@ public class RDFgenerator {
         Property rdftype = model.createProperty(RDF.getURI(), "type");
         Property propertytrip = model.createProperty(db, "Trip");
         Property propertyroute = model.createProperty(dbo, "route");
-        Property timetravel = model.createProperty(dbo, "Time_travel");
+        Property timetravel = model.createProperty(db, "Time_travel");
         Property endpoint = model.createProperty(dbo, "endPoint");
-        Property lat = model.createProperty(dbo, "latitude");
-        Property longi = model.createProperty(dbo, "longitude");
+        Property lat = model.createProperty(db, "latitude");
+        Property longi = model.createProperty(db, "longitude");
 
         for(int i=1; i<list1.get(0).size(); i++) {
             Resource route = model.createProperty(Proute,list1.get(0).get(i));
