@@ -1,0 +1,19 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SNCF route page</title>
+
+</head>
+<body>
+This page shows list of all SNCF stops
+
+<table>
+    <!--/*@thymesVar id="list" type="java"*/-->
+    <tr th:each="list : ${list}">
+        <td th:text="${list}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
