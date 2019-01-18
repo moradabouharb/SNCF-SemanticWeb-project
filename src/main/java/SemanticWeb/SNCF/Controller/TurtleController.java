@@ -42,6 +42,13 @@ public class TurtleController {
         return RG.RDF(TP.FileRoutesParser(),TP.FileTripParser(),TP.FileStopsParser(),TP.FileStoptimesParser());
     }
 
+    @GetMapping(value = "turtle_plain", produces = {"text/plain"})
+    public @ResponseBody
+    String rdfturtletext(){
+        return RG.Getmodeltext(RG.RDF());
+    }
+
+
     @GetMapping("/query3")
     public String GetUserFileQuery(Model model){
         model.addAttribute("formats", formats);

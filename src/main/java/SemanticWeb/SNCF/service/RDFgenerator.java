@@ -93,4 +93,10 @@ public class RDFgenerator {
         }
         return model;
     }
+
+    public String Getmodeltext(Model model){
+        Writer out = new StringWriter();
+        model.write(out,"turtle");
+        return out.toString();
+    }
 }
