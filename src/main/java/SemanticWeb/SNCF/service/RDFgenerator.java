@@ -86,10 +86,10 @@ public class RDFgenerator {
         for(int i=1; i<list4.get(0).size(); i++) {
             Resource trip = model.createProperty(Ptrip,list4.get(0).get(i));
             Literal departuretime = model.createTypedLiteral(list4.get(2).get(i),xsdTime);
-            Literal literalendpoint = model.createTypedLiteral(list4.get(3).get(i),xsdString);
             model.add(trip,rdftype,propertytrip);
             model.add(trip,timetravel,departuretime);
-            model.add(trip, endpoint, literalendpoint);
+            model.add(trip, endpoint, model.createProperty(Pstop,list4.get(3).get(i)
+                    .replaceAll("\\s+","").replace(":","")));
         }
         return model;
     }
