@@ -71,7 +71,7 @@ public class RDFgenerator {
         for(int i=1; i<list2.get(0).size(); i++) {
             Resource trip = model.createProperty(Ptrip,list2.get(1).get(i));
             model.add(trip,rdftype,propertytrip);
-            model.add(trip,propertyroute,list2.get(0).get(i));
+            model.add(trip,propertyroute,model.createProperty(Proute,list2.get(0).get(i)));
         }
         for(int i=1; i<list3.get(0).size(); i++) {
             Resource stop = model.createProperty(Pstop,list3.get(0).get(i));
