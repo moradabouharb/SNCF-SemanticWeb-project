@@ -3,8 +3,7 @@ package SemanticWeb.SNCF.Controller;
 import SemanticWeb.SNCF.Utility.TextfileParser;
 import SemanticWeb.SNCF.service.RDFgenerator;
 import SemanticWeb.SNCF.service.Service1;
-import org.apache.jena.query.QueryExecution;
-import org.apache.jena.query.ResultSet;
+import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.util.FileManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +25,7 @@ import java.util.List;
 public class TurtleController {
 
     private List<String> formats = new ArrayList<String>(Arrays.asList("TURTLE", "TTL", "Turtle", "N-TRIPLES", "N-TRIPLE", "NT", "JSON-LD", "RDF/XML-ABBREV", "RDF/XML", "N3", "RDF/JSON"));
+    final String owl = "http://dbpedia.org/ontology/";
 
     @Autowired
     private RDFgenerator RG;
@@ -64,88 +64,30 @@ public class TurtleController {
 //        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 //        modelJena.write(byteArrayOutputStream);
         String result = "";
+        List<String> strings = new ArrayList<String>();
 
-//        Query query1 = QueryFactory.create(query);
-//        QueryExecution qexec = QueryExecutionFactory.create(query, modelJena1);
-//        Iterator<Triple> triples = qexec.execConstructTriples();
-//
-//        try{
-//            while (triples.hasNext()){
-//                Triple triple = triples.next();
-//                result += triple.toString() + " <br>";
-//            }
-//
-//        }finally {
-//            qexec.close();
-//        }
 
-        StmtIterator iter = modelJena1.listStatements();
-        while (iter.hasNext()){
-            Statement stm = iter.nextStatement();
-            Resource subject = stm.getSubject();
-            Property properties = stm.getPredicate();
-            RDFNode object = stm.getObject();
+        Query queryJena = QueryFactory.create(query);
+        QueryExecution queryExecution = QueryExecutionFactory.create(queryJena, modelJena1);
 
-            result += subject.toString() + " " + properties.toString() + " ";
+        try{
+            ResultSet resultSet = queryExecution.execSelect();
+            String str = "";
+            while (resultSet.hasNext()){
+                QuerySolution querySolution = resultSet.nextSolution();
+                str = querySolution.toString();
+                strings.add(str);
+            }
 
-            if (object instanceof Resource)
-                result += object.toString();
-            else
-                result += "\"" + object + "\"";
-            result += " . <br>";
+        } finally {
+            queryExecution.close();
         }
 
         model.addAttribute("formats", formats);
         model.addAttribute("query", query);
         model.addAttribute("result", result);
+        model.addAttribute("list", strings);
         return "query3";
-    }
-
-
-
-
-
-
-    @GetMapping("/query2")
-    public String GetUserQuery(Model model){
-        model.addAttribute("formats", formats);
-        return "query2";
-    }
-
-    @PostMapping("/query2")
-    public String PostUserQuery(@RequestParam("query") String query, @RequestParam("format") String format, @RequestParam("path") String path, Model model) throws IOException {
-
-
-        model.addAttribute("formats", formats);
-        FileManager.get().addLocatorClassLoader(this.getClass().getClassLoader());
-
-        org.apache.jena.rdf.model.Model model1 = FileManager.get().loadModel("C:/Users/Good/Desktop/" + path);
-        String res = "";
-
-        QueryExecution queryExecution = service1.LocalSparQuery(query, model1);
-
-//        try {
-//            queryExecution.
-//            ResultSet resultSet = queryExecution.execSelect();
-//            while(resultSet.hasNext()){
-//                QuerySolution solution = resultSet.nextSolution();
-//                Literal name = solution.getLiteral("x");
-//                res += name;
-//            }
-//        }
-//        finally {
-////            queryExecution.close();
-//        }
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-//        org.apache.jena.rdf.model.Model model2 =  queryExecution.execConstruct();
-
-        model1.write(outputStream, format);
-
-        model.addAttribute("path", path);
-        model.addAttribute("result", outputStream.toString());
-        model.addAttribute("query", query);
-
-        return "query2";
     }
 
     @GetMapping("/query1")
@@ -158,23 +100,30 @@ public class TurtleController {
     public String PostLocalQuery(@RequestParam("query") String query, @RequestParam("format") String format, Model model){
         model.addAttribute("formats", formats);
 
-        QueryExecution queryExecution = service1.LocalSparQuery(query);
-        List<String> list = new ArrayList<String>();
-        try {
+        List<String> strings = new ArrayList<String>();
+        org.apache.jena.rdf.model.Model model1 = RG.RDF();
+
+        Query queryJena = QueryFactory.create(query);
+        QueryExecution queryExecution = QueryExecutionFactory.create(queryJena, model1);
+
+        try{
             ResultSet resultSet = queryExecution.execSelect();
-            list = resultSet.getResultVars();
-        }
-        finally {
+            String str = "";
+            while (resultSet.hasNext()){
+                QuerySolution querySolution = resultSet.nextSolution();
+                str = querySolution.toString();
+                strings.add(str);
+            }
+
+        } finally {
             queryExecution.close();
         }
-        model.addAttribute("list", list);
-        model.addAttribute("query", query);
 
+        model.addAttribute("list", strings);
+        model.addAttribute("query", query);
 
         return "query1";
     }
-
-
 
     @GetMapping("/query")
     public String GetSPARSQLquery(Model model){
