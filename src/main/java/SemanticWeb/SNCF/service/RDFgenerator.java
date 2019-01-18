@@ -30,7 +30,7 @@ public class RDFgenerator {
     private Model getModel(List<List<String>> list1, List<List<String>> list2, List<List<String>> list3, List<List<String>> list4) {
         Model model = ModelFactory.createDefaultModel();
         final String rdfs = "http://www.w3.org/2000/01/rdf-schema#";
-        final String owl = "http://dbpedia.org/ontology/";
+        final String dbo = "http://dbpedia.org/ontology/";
         final String db = "dbpedia.org/resource/";
         final String geo = "http://www.w3.org/2003/01/geo/wgs84_pos#";
         final String latitude = "http://www.w3.org/2003/01/geo/wgs84_pos#lat";
@@ -42,7 +42,7 @@ public class RDFgenerator {
         final String xsdTime = XSD.time.getURI();
         model.setNsPrefix("rdfs",rdfs);
         model.setNsPrefix("rdf", RDF.getURI());
-        model.setNsPrefix("owl", owl);
+        model.setNsPrefix("dbo", dbo);
         model.setNsPrefix("db", db);
         model.setNsPrefix("xsdString", xsdString);
         model.setNsPrefix("xsdTime", xsdTime);
@@ -53,14 +53,14 @@ public class RDFgenerator {
         model.setNsPrefix("Ptrip", Ptrip);
         model.setNsPrefix("Pstop", Pstop);
         Property routelebel = model.createProperty(rdfs, "label");
-        Property routeOfTransportation = model.createProperty(owl, "RouteOfTransportation");
+        Property routeOfTransportation = model.createProperty(dbo, "RouteOfTransportation");
         Property rdftype = model.createProperty(RDF.getURI(), "type");
         Property propertytrip = model.createProperty(db, "Trip");
-        Property propertyroute = model.createProperty(owl, "route");
-        Property timetravel = model.createProperty(owl, "Time_travel");
-        Property endpoint = model.createProperty(owl, "endPoint");
-        Property lat = model.createProperty(owl, "latitude");
-        Property longi = model.createProperty(owl, "longitude");
+        Property propertyroute = model.createProperty(dbo, "route");
+        Property timetravel = model.createProperty(dbo, "Time_travel");
+        Property endpoint = model.createProperty(dbo, "endPoint");
+        Property lat = model.createProperty(dbo, "latitude");
+        Property longi = model.createProperty(dbo, "longitude");
 
         for(int i=1; i<list1.get(0).size(); i++) {
             Resource route = model.createProperty(Proute,list1.get(0).get(i));
