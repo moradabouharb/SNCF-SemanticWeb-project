@@ -1,12 +1,10 @@
 package SemanticWeb.SNCF.service;
-
 import SemanticWeb.SNCF.Utility.TextfileParser;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.XSD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.List;
@@ -33,8 +31,6 @@ public class RDFgenerator {
         final String dbo = "http://dbpedia.org/ontology/";
         final String db = "dbpedia.org/resource/";
         final String geo = "http://www.w3.org/2003/01/geo/wgs84_pos#";
-        final String latitude = "http://www.w3.org/2003/01/geo/wgs84_pos#lat";
-        final String longitude = "http://www.w3.org/2003/01/geo/wgs84_pos#long";
         final String Proute = "http://localhost/route#";
         final String Ptrip = "http://localhost/trip#";
         final String Pstop = "http://localhost/stop#";
@@ -45,8 +41,6 @@ public class RDFgenerator {
         model.setNsPrefix("db", db);
         model.setNsPrefix("xsd", xsd);
         model.setNsPrefix("geo", geo);
-        model.setNsPrefix("latitude", latitude);
-        model.setNsPrefix("longitude", longitude);
         model.setNsPrefix("Proute", Proute);
         model.setNsPrefix("Ptrip", Ptrip);
         model.setNsPrefix("Pstop", Pstop);
@@ -57,8 +51,8 @@ public class RDFgenerator {
         Property propertyroute = model.createProperty(dbo, "route");
         Property timetravel = model.createProperty(dbo, "Time_travel");
         Property endpoint = model.createProperty(dbo, "endPoint");
-        Property lat = model.createProperty(dbo, "latitude");
-        Property longi = model.createProperty(dbo, "longitude");
+        Property lat = model.createProperty(db, "latitude");
+        Property longi = model.createProperty(db, "longitude");
 
         for(int i=1; i<list1.get(0).size(); i++) {
             Resource route = model.createProperty(Proute,list1.get(0).get(i));
