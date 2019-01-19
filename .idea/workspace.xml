@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d14a438-084b-46c9-8e1c-b2052733d3a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/SemanticWeb/SNCF/service/RDFgenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SemanticWeb/SNCF/service/RDFgenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -24,12 +22,12 @@
     <session id="703537481">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="197" />
+          <entry key="java" value="205" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="197" />
+          <entry key="JAVA" value="205" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -54,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="70" column="47" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="47" />
+            <state relative-caret-position="147">
+              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -510,7 +508,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1100" />
@@ -681,12 +679,12 @@
       <workItem from="1547777674684" duration="1823000" />
       <workItem from="1547817712348" duration="4990000" />
       <workItem from="1547823148802" duration="1546000" />
-      <workItem from="1547862604070" duration="127000" />
+      <workItem from="1547862604070" duration="1092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68619000" />
+    <option name="totallyTimeSpent" value="69515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -955,8 +953,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="70" column="47" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="47" />
+        <state relative-caret-position="147">
+          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
