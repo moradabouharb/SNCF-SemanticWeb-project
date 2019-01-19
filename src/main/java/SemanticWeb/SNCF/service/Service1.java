@@ -6,6 +6,7 @@ import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.QueryFactory;
 import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,15 +33,15 @@ public class Service1 {
         return qexec.execConstruct();
     }
 
-    public QueryExecution LocalSparQuery(String query){
+    public Model LocalSparQuery(String query){
 
         Model model = RG.RDF();
         if (model != null){
             Query query1 = QueryFactory.create(query);
             QueryExecution qexec = QueryExecutionFactory.create(query1, model);
-            return qexec;
+            return qexec.execConstruct();
         }else
-            return null;
+            return ModelFactory.createDefaultModel();
     }
 
     public QueryExecution LocalSparQuery(String query, Model model){

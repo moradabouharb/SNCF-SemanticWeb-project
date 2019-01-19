@@ -40,7 +40,26 @@
                 <button type="submit" class="btn btn-primary btn-block my-1">Submit</button>
             </form>
 
-            <div class="text-center text-info" th:if="${result}" th:utext="${result}"></div>
+            <div class="text-center text-info" th:if="${result}" th:utext="${result}">
+
+            </div>
+
+            <div th:if="${list}">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="item, index : ${list}">
+                        <th scope="row" th:utext="${index.index}">1</th>
+                        <td th:utext="${item}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
             <!--<div class="text-center" th:if="${result}" th:utext="${result}">-->
                 <!--<textarea th:utext="${result}"></textarea>-->
             <!--</div>-->
