@@ -98,7 +98,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-420">
+            <state relative-caret-position="756">
               <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -728,7 +728,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59095000" />
+    <option name="totallyTimeSpent" value="59100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1007,7 +1007,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
+        <state relative-caret-position="756">
           <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
