@@ -18,7 +18,7 @@ public class Service1 {
     @Autowired
     private RDFgenerator RG;
 
-    public static String SendQuery(String url, String query, String format){
+    public static String SendQuery(String url, String query, String format) {
         QueryExecution qexec = QueryExecutionFactory.sparqlService(url, query);
         ByteArrayOutputStream os = new ByteArrayOutputStream();
         String result = "";
@@ -28,30 +28,29 @@ public class Service1 {
         return result;
     }
 
-    public static Model SendQuery(String url, String query){
+    public static Model SendQuery(String url, String query) {
         QueryExecution qexec = QueryExecutionFactory.sparqlService(url, query);
         return qexec.execConstruct();
     }
 
-    public Model LocalSparQuery(String query){
+    public Model LocalSparQuery(String query) {
 
         Model model = RG.RDF();
-        if (model != null){
+        if (model != null) {
             Query query1 = QueryFactory.create(query);
             QueryExecution qexec = QueryExecutionFactory.create(query1, model);
             return qexec.execConstruct();
-        }else
+        } else
             return ModelFactory.createDefaultModel();
     }
 
-    public QueryExecution LocalSparQuery(String query, Model model){
+    public QueryExecution LocalSparQuery(String query, Model model) {
 
-        if (model != null){
+        if (model != null) {
             Query query1 = QueryFactory.create(query);
             QueryExecution qexec = QueryExecutionFactory.create(query1, model);
             return qexec;
-        }else
+        } else
             return null;
     }
-
 }
