@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="3d14a438-084b-46c9-8e1c-b2052733d3a2" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="3d14a438-084b-46c9-8e1c-b2052733d3a2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/TurtleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/TurtleController.java" afterDir="false" />
+    </list>
+>>>>>>> 9fd63d0241618f732f2fe26bf871985f16dca2d7
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,6 +43,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/TurtleController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="42">
               <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
               <folding>
@@ -66,6 +75,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-462">
               <caret line="18" column="27" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="27" />
+=======
+            <state relative-caret-position="100">
+              <caret line="39" column="63" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+>>>>>>> 9fd63d0241618f732f2fe26bf871985f16dca2d7
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,7 +87,20 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator1.java">
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/query1.html">
+>>>>>>> 9fd63d0241618f732f2fe26bf871985f16dca2d7
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
@@ -130,10 +156,10 @@
         <option value="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/info.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/trips.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/query3.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/Service1.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/query1.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/TurtleController.java" />
       </list>
     </option>
@@ -247,7 +273,11 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548197882059" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548196984963" />
+>>>>>>> 9fd63d0241618f732f2fe26bf871985f16dca2d7
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/123123123" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -310,14 +340,29 @@
       <workItem from="1547896757568" duration="608000" />
       <workItem from="1548183134128" duration="2251000" />
     </task>
+    <task id="LOCAL-00001" summary="updated">
+      <created>1548195964125</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1548195964125</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="74791000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
+=======
+    <option name="totallyTimeSpent" value="76585000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+>>>>>>> 9fd63d0241618f732f2fe26bf871985f16dca2d7
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25479743" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -330,14 +375,18 @@
       <window_info id="aws.explorer" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991204" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3548387" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6186349" />
+>>>>>>> 9fd63d0241618f732f2fe26bf871985f16dca2d7
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32991204" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.50812566" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.50812566" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32991204" />
@@ -400,14 +449,15 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/TurtleController.java</url>
-          <line>86</line>
+          <line>87</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -568,6 +618,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -581,6 +632,10 @@
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java">
+      <provider selected="true" editor-type-id="text-editor" />
+>>>>>>> 9fd63d0241618f732f2fe26bf871985f16dca2d7
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/info.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -626,10 +681,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/9.0.14/77a3ba9b672a82b6796d895e9640f90e73ac6389/tomcat-embed-core-9.0.14-sources.jar!/org/apache/tomcat/util/net/SocketProcessorBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/TurtleController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="42">
           <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+=======
+        <state relative-caret-position="100">
+          <caret line="39" column="63" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+>>>>>>> 9fd63d0241618f732f2fe26bf871985f16dca2d7
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1020#1028#0" expanded="true" />
