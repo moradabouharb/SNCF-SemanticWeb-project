@@ -2,11 +2,11 @@ package SemanticWeb.SNCF.Controller;
 
 import SemanticWeb.SNCF.Utility.TextfileParser;
 import SemanticWeb.SNCF.service.RDFgenerator;
+import SemanticWeb.SNCF.service.RDFgenerator1;
 import SemanticWeb.SNCF.service.Service1;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.sparql.core.Var;
-import org.apache.jena.util.FileManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,6 +27,19 @@ public class TurtleController {
 
     private List<String> formats = new ArrayList<String>(Arrays.asList("TURTLE", "TTL", "Turtle", "N-TRIPLES", "N-TRIPLE", "NT", "JSON-LD", "RDF/XML-ABBREV", "RDF/XML", "N3", "RDF/JSON"));
     final String owl = "http://dbpedia.org/ontology/";
+    String prefixs = "prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> \n" +
+            "prefix xsdTime: <http://www.w3.org/2001/XMLSchema#time> \n" +
+            "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n" +
+            "prefix dbo:   <http://dbpedia.org/ontology/> \n" +
+            "prefix Proute: <http://localhost/route#> \n" +
+            "prefix latitude: <http://www.w3.org/2003/01/geo/wgs84_pos#lat> \n" +
+            "prefix Ptrip: <http://localhost/trip#> \n" +
+            "prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> \n" +
+            "prefix xsdString: <http://www.w3.org/2001/XMLSchema#string> \n" +
+            "prefix db:    <http://dbpedia.org/resource/> \n" +
+            "prefix longitude: <http://www.w3.org/2003/01/geo/wgs84_pos#long> \n" +
+            "prefix Pstop: <http://localhost/stop#> \n\n\n"
+            ;
 
     @Autowired
     private RDFgenerator RG;
@@ -96,43 +108,10 @@ public class TurtleController {
     public String GetLocalQuery(@RequestParam(value = "button", required = false) String btn, Model model){
         if (!StringUtils.isEmpty(btn)){
             int i = Integer.parseInt(btn);
-            if (i == 1) {
-                model.addAttribute("query", "PREFIX foaf: <http://xmlns.com/foaf/0.1/> \n" +
-                        "PREFIX db: <dbpedia.org/resource/> \n" +
-                        "PREFIX owl: <http://dbpedia.org/ontology/>\n" +
-                        "\n" +
-                        "SELECT ?route\n" +
-                        "WHERE {\n" +
-                        "     ?trip owl:route ?route .\n" +
-                        "}");
-            }else if (i == 2){
-                model.addAttribute("query", "PREFIX db: <dbpedia.org/resource/> \n" +
-                        "PREFIX owl: <http://dbpedia.org/ontology/>\n" +
-                        "PREFIX space: <http://purl.org/net/schemas/space/>\n" +
-                        "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                        "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
-                        "\n" +
-                        "SELECT ?time ?route ?name\n" +
-                        "WHERE {\n" +
-                        "?trip owl:Time_travel ?time;\n" +
-                        "owl:route ?route.\n" +
-                        "}");
-            }else if (i == 3){
-                model.addAttribute("query", "PREFIX db: <dbpedia.org/resource/> \n" +
-                        "PREFIX owl: <http://dbpedia.org/ontology/>\n" +
-                        "PREFIX space: <http://purl.org/net/schemas/space/>\n" +
-                        "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                        "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
-                        "\n" +
-                        "SELECT ?time ?route ?endpoint\n" +
-                        "WHERE {\n" +
-                        "?trip owl:Time_travel ?time;\n" +
-                        "owl:route ?route;\n" +
-                        "owl:endPoint ?endpoint.\n" +
-                        "}\n" +
-                        "Limit 10");
-            }else if (i == 4){
-                model.addAttribute("query", "SELECT  ?NameofRoute ?NameofStopStation ?latitude ?longitude ?TimeTravel\n" +
+
+            if (i == 4){
+                model.addAttribute("query", prefixs +
+                        "SELECT  ?NameofRoute ?NameofStopStation ?latitude ?longitude ?TimeTravel\n" +
                         "WHERE {\n" +
                         "?trip dbo:endPoint ?StopStation;\n" +
                         "dbo:Time_travel ?TimeTravel;\n" +
@@ -142,9 +121,10 @@ public class TurtleController {
                         "db:latitude ?latitude;\n" +
                         "db:longitude ?longitude.\n" +
                         "}\n" +
-                        "Limit 200");
+                        "Limit 20");
             }else if (i == 5){
-                model.addAttribute("query", "SELECT ?Travel_time ?Stop_Station\n" +
+                model.addAttribute("query", prefixs +
+                        "SELECT ?Travel_time ?Stop_Station\n" +
                         "WHERE {\n" +
                         "?trip dbo:Time_travel ?Travel_time ;\n" +
                         "dbo:endPoint Pstop:StopPointOCETrainTER-87775288.\n" +
@@ -153,23 +133,26 @@ public class TurtleController {
                         "}\n" +
                         "limit 20");
             }else if (i == 6){
-                model.addAttribute("query", "SELECT ?Travel_time ?Stop_Station\n" +
+                model.addAttribute("query", prefixs +
+                        "SELECT ?Travel_time ?Stop_Station\n" +
                         "WHERE {\n" +
                         "?trip dbo:Time_travel ?Travel_time ;\n" +
                         "dbo:endPoint Pstop:StopPointOCETrainTER-87775288.\n" +
                         "Pstop:StopPointOCETrainTER-87775288 rdfs:label ?Stop_Station;\n" +
                         "filter(?Travel_time = \"10:01:00\"^^xsd:time)\n" +
-                        "}\n");
+                        "}\n" +
+                        "limit 20");
             }else if (i == 7){
-                model.addAttribute("query", "SELECT ?RouteName ?TravelTime\n" +
+                model.addAttribute("query", prefixs +
+                        "SELECT ?RouteName ?TravelTime\n" +
                         "WHERE {\n" +
                         "?trip dbo:route ?route;\n" +
                         "dbo:Time_travel ?TravelTime.\n" +
                         "?route rdfs:label ?RouteName.\n" +
                         "}\n" +
-                        "limit 100");
+                        "limit 20");
             }else if (i == 8){
-                model.addAttribute("query", "\n" +
+                model.addAttribute("query", prefixs +
                         "SELECT ?Travel_time ?Stop_Station\n" +
                         "WHERE {\n" +
                         "?trip dbo:Time_travel ?Travel_time ;\n" +
@@ -177,7 +160,7 @@ public class TurtleController {
                         "?stop_point rdfs:label ?Stop_Station.\n" +
                         "\n" +
                         "}\n" +
-                        "limit 200");
+                        "limit 20");
             }
         }
         return "query1";
@@ -194,9 +177,6 @@ public class TurtleController {
         List<Var> vars = queryJena.getProjectVars();
         List<List<String>> data = new ArrayList<List<String>>();
 
-
-
-
         try{
             ResultSet resultSet = queryExecution.execSelect();
 
@@ -206,7 +186,10 @@ public class TurtleController {
 
                     for (Var var : vars) {
                         if (querySolution.contains(var.getVarName()))
-                            strings.add(querySolution.getLiteral(var.getName()).toString());
+                            if (querySolution.get(var.getName()).isLiteral())
+                                strings.add(querySolution.getLiteral(var.getName()).toString());
+                            else if (querySolution.get(var.getName()).isResource())
+                                strings.add(querySolution.getResource(var.getName()).toString());
                     }
                     data.add(strings);
                 }
@@ -217,7 +200,6 @@ public class TurtleController {
 
         model.addAttribute("vars", vars);
         model.addAttribute("data", data);
-//        model.addAttribute("list", strings);
         model.addAttribute("query", query);
 
         return "query1";

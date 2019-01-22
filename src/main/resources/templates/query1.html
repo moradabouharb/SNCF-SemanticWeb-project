@@ -17,7 +17,7 @@
     <h1>Local SPARQL</h1>
     <div class="container">
         <div class="row justify-content-md-center">
-            <div class="col col-md-6">
+            <div class="col col-md-9">
 
                 <form th:action="@{/query1}" id="form1" method="post">
 
@@ -25,7 +25,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">SPARSQL</span>
                         </div>
-                        <textarea style="height: 400px;" th:utext="${query}" name="query" class="form-control" aria-label="With textarea"
+                        <textarea style="height: 550px;" th:utext="${query}" name="query" class="form-control" aria-label="With textarea"
                                   form="form1"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block my-1">Submit</button>
@@ -36,20 +36,8 @@
                 <!--<textarea th:utext="${result}"></textarea>-->
                 <!--</div>-->
             </div>
-            <div class="col col-md-6">
+            <div class="col col-md-3">
                 <div>
-                    <form th:action="@{/query1}" method="get">
-                        <input type="hidden" name="button" value="1">
-                        <button type="submit" class="btn btn-warning m-1">Example 1</button>
-                    </form>
-                    <form th:action="@{/query1}" method="get">
-                        <input type="hidden" name="button" value="2">
-                        <button type="submit" class="btn btn-warning m-1">Example 2</button>
-                    </form>
-                    <form th:action="@{/query1}" method="get">
-                        <input type="hidden" name="button" value="3">
-                        <button type="submit" class="btn btn-warning m-1">Example 3</button>
-                    </form>
                     <form th:action="@{/query1}" method="get">
                         <input type="hidden" name="button" value="4">
                         <button type="submit" class="btn btn-warning m-1">Example 4</button>
@@ -74,22 +62,23 @@
             </div>
         </div>
     </div>
-    <div th:if="${data}" class="container my-2">
-        <table class="table table table-bordered">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col" th:each="var : ${vars}" th:utext="${var.getName()}"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="item, index : ${data}">
-                <th scope="row" th:utext="${index.index }"></th>
-                <td th:each="val : ${item}" th:utext="${val}"></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+</div>
+
+<div th:if="${data}" class="m-2">
+    <table class="table table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col" th:each="var : ${vars}" th:utext="${var.getName()}"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item, index : ${data}">
+            <th scope="row" th:utext="${index.index }"></th>
+            <td th:each="val : ${item}" th:utext="${val}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 <!-- Optional JavaScript -->
