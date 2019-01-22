@@ -5,10 +5,12 @@ import SemanticWeb.SNCF.service.RDFgenerator;
 import SemanticWeb.SNCF.service.Service1;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
+import org.apache.jena.sparql.core.Var;
 import org.apache.jena.util.FileManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -91,35 +93,131 @@ public class TurtleController {
     }
 
     @GetMapping("/query1")
-    public String GetLocalQuery(Model model){
-        model.addAttribute("formats", formats);
+    public String GetLocalQuery(@RequestParam(value = "button", required = false) String btn, Model model){
+        if (!StringUtils.isEmpty(btn)){
+            int i = Integer.parseInt(btn);
+            if (i == 1) {
+                model.addAttribute("query", "PREFIX foaf: <http://xmlns.com/foaf/0.1/> \n" +
+                        "PREFIX db: <dbpedia.org/resource/> \n" +
+                        "PREFIX owl: <http://dbpedia.org/ontology/>\n" +
+                        "\n" +
+                        "SELECT ?route\n" +
+                        "WHERE {\n" +
+                        "     ?trip owl:route ?route .\n" +
+                        "}");
+            }else if (i == 2){
+                model.addAttribute("query", "PREFIX db: <dbpedia.org/resource/> \n" +
+                        "PREFIX owl: <http://dbpedia.org/ontology/>\n" +
+                        "PREFIX space: <http://purl.org/net/schemas/space/>\n" +
+                        "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                        "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
+                        "\n" +
+                        "SELECT ?time ?route ?name\n" +
+                        "WHERE {\n" +
+                        "?trip owl:Time_travel ?time;\n" +
+                        "owl:route ?route.\n" +
+                        "}");
+            }else if (i == 3){
+                model.addAttribute("query", "PREFIX db: <dbpedia.org/resource/> \n" +
+                        "PREFIX owl: <http://dbpedia.org/ontology/>\n" +
+                        "PREFIX space: <http://purl.org/net/schemas/space/>\n" +
+                        "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                        "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
+                        "\n" +
+                        "SELECT ?time ?route ?endpoint\n" +
+                        "WHERE {\n" +
+                        "?trip owl:Time_travel ?time;\n" +
+                        "owl:route ?route;\n" +
+                        "owl:endPoint ?endpoint.\n" +
+                        "}\n" +
+                        "Limit 10");
+            }else if (i == 4){
+                model.addAttribute("query", "SELECT  ?NameofRoute ?NameofStopStation ?latitude ?longitude ?TimeTravel\n" +
+                        "WHERE {\n" +
+                        "?trip dbo:endPoint ?StopStation;\n" +
+                        "dbo:Time_travel ?TimeTravel;\n" +
+                        "dbo:route ?Route.\n" +
+                        "?Route rdfs:label ?NameofRoute.\n" +
+                        "?StopStation rdfs:label ?NameofStopStation;\n" +
+                        "db:latitude ?latitude;\n" +
+                        "db:longitude ?longitude.\n" +
+                        "}\n" +
+                        "Limit 200");
+            }else if (i == 5){
+                model.addAttribute("query", "SELECT ?Travel_time ?Stop_Station\n" +
+                        "WHERE {\n" +
+                        "?trip dbo:Time_travel ?Travel_time ;\n" +
+                        "dbo:endPoint Pstop:StopPointOCETrainTER-87775288.\n" +
+                        "Pstop:StopPointOCETrainTER-87775288 rdfs:label ?Stop_Station;\n" +
+                        "\n" +
+                        "}\n" +
+                        "limit 20");
+            }else if (i == 6){
+                model.addAttribute("query", "SELECT ?Travel_time ?Stop_Station\n" +
+                        "WHERE {\n" +
+                        "?trip dbo:Time_travel ?Travel_time ;\n" +
+                        "dbo:endPoint Pstop:StopPointOCETrainTER-87775288.\n" +
+                        "Pstop:StopPointOCETrainTER-87775288 rdfs:label ?Stop_Station;\n" +
+                        "filter(?Travel_time = \"10:01:00\"^^xsd:time)\n" +
+                        "}\n");
+            }else if (i == 7){
+                model.addAttribute("query", "SELECT ?RouteName ?TravelTime\n" +
+                        "WHERE {\n" +
+                        "?trip dbo:route ?route;\n" +
+                        "dbo:Time_travel ?TravelTime.\n" +
+                        "?route rdfs:label ?RouteName.\n" +
+                        "}\n" +
+                        "limit 100");
+            }else if (i == 8){
+                model.addAttribute("query", "\n" +
+                        "SELECT ?Travel_time ?Stop_Station\n" +
+                        "WHERE {\n" +
+                        "?trip dbo:Time_travel ?Travel_time ;\n" +
+                        "dbo:endPoint ?stop_point.\n" +
+                        "?stop_point rdfs:label ?Stop_Station.\n" +
+                        "\n" +
+                        "}\n" +
+                        "limit 200");
+            }
+        }
         return "query1";
     }
 
     @PostMapping("/query1")
-    public String PostLocalQuery(@RequestParam("query") String query, @RequestParam("format") String format, Model model){
+    public String PostLocalQuery(@RequestParam("query") String query, Model model){
         model.addAttribute("formats", formats);
 
-        List<String> strings = new ArrayList<String>();
         org.apache.jena.rdf.model.Model model1 = RG.RDF();
 
         Query queryJena = QueryFactory.create(query);
         QueryExecution queryExecution = QueryExecutionFactory.create(queryJena, model1);
+        List<Var> vars = queryJena.getProjectVars();
+        List<List<String>> data = new ArrayList<List<String>>();
+
+
+
 
         try{
             ResultSet resultSet = queryExecution.execSelect();
-            String str = "";
-            while (resultSet.hasNext()){
-                QuerySolution querySolution = resultSet.nextSolution();
-                str = querySolution.toString();
-                strings.add(str);
-            }
+
+                while (resultSet.hasNext()){
+                    List<String> strings = new ArrayList<String>();
+                    QuerySolution querySolution = resultSet.nextSolution();
+
+                    for (Var var : vars) {
+                        if (querySolution.contains(var.getVarName()))
+                            strings.add(querySolution.getLiteral(var.getName()).toString());
+                    }
+                    data.add(strings);
+                }
 
         } finally {
             queryExecution.close();
         }
 
-        model.addAttribute("list", strings);
+        model.addAttribute("vars", vars);
+        model.addAttribute("data", data);
+//        model.addAttribute("list", strings);
         model.addAttribute("query", query);
 
         return "query1";
