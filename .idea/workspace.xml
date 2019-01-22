@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d14a438-084b-46c9-8e1c-b2052733d3a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/SemanticWeb/SNCF/Controller/TurtleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SemanticWeb/SNCF/Controller/TurtleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/SemanticWeb/SNCF/service/RDFgenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SemanticWeb/SNCF/service/RDFgenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/SemanticWeb/SNCF/service/Service1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SemanticWeb/SNCF/service/Service1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/TurtleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/TurtleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/query1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/query1.html" afterDir="false" />
-    </list>
+    <list default="true" id="3d14a438-084b-46c9-8e1c-b2052733d3a2" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,13 +16,44 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="703537481">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/TurtleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="142" column="31" lean-forward="true" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="31" />
+            <state relative-caret-position="42">
+              <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1020#1028#0" expanded="true" />
+                <element signature="e#2629#2630#0" expanded="true" />
+                <element signature="e#3440#3448#0" expanded="true" />
+                <element signature="e#7641#7655#0" expanded="true" />
+                <element signature="e#7838#7846#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,13 +62,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/query1.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/Service1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="64" column="6" lean-forward="true" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
+            <state relative-caret-position="-462">
+              <caret line="18" column="27" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="27" />
               <folding>
-                <element signature="n#style#0;n#textarea#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/info.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -96,32 +138,30 @@
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1100" />
     <option name="height" value="970" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="SNCF" type="b2602c69:ProjectViewProjectNode" />
               <item name="SNCF-SemanticWeb-project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="SNCF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SNCF-SemanticWeb-project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SNCF" type="b2602c69:ProjectViewProjectNode" />
@@ -181,15 +221,6 @@
               <item name="SNCF-SemanticWeb-project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="SNCF" type="462c0819:PsiDirectoryNode" />
-              <item name="Utility" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SNCF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SNCF-SemanticWeb-project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -204,6 +235,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -215,7 +247,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548194968350" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548197882059" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/123123123" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -281,10 +313,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74524000" />
+    <option name="totallyTimeSpent" value="74791000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25479743" />
@@ -298,7 +330,7 @@
       <window_info id="aws.explorer" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991204" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29144096" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3548387" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -362,20 +394,6 @@
                 </list>
               </option>
             </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
           </value>
         </entry>
       </map>
@@ -533,9 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -560,19 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/configuration/ConfigMVC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -582,8 +584,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="23" />
+        <state relative-caret-position="588">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/query1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="64" column="6" lean-forward="true" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -592,7 +618,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/Service1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
+        <state relative-caret-position="-462">
           <caret line="18" column="27" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -600,22 +626,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/query1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="64" column="6" lean-forward="true" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/TurtleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="142" column="31" lean-forward="true" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="31" />
+        <state relative-caret-position="42">
+          <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1020#1028#0" expanded="true" />
+            <element signature="e#2629#2630#0" expanded="true" />
+            <element signature="e#3440#3448#0" expanded="true" />
+            <element signature="e#7641#7655#0" expanded="true" />
+            <element signature="e#7838#7846#0" expanded="true" />
           </folding>
         </state>
       </provider>
