@@ -2,7 +2,6 @@ package SemanticWeb.SNCF.Controller;
 
 import SemanticWeb.SNCF.Utility.TextfileParser;
 import SemanticWeb.SNCF.service.RDFgenerator;
-import SemanticWeb.SNCF.service.RDFgenerator1;
 import SemanticWeb.SNCF.service.Service1;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
@@ -37,6 +36,7 @@ public class TurtleController {
             "prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> \n" +
             "prefix xsdString: <http://www.w3.org/2001/XMLSchema#string> \n" +
             "prefix db:    <http://dbpedia.org/resource/> \n" +
+            "prefix xsd: <http://www.w3.org/2001/XMLSchema> \n" +
             "prefix longitude: <http://www.w3.org/2003/01/geo/wgs84_pos#long> \n" +
             "prefix Pstop: <http://localhost/stop#> \n\n\n"
             ;
