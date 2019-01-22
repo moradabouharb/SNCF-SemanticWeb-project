@@ -140,8 +140,7 @@ public class TurtleController {
                         "dbo:endPoint Pstop:StopPointOCETrainTER-87775288.\n" +
                         "Pstop:StopPointOCETrainTER-87775288 rdfs:label ?Stop_Station;\n" +
                         "filter(?Travel_time = \"10:01:00\"^^xsd:time)\n" +
-                        "}\n" +
-                        "limit 20");
+                        "}\n");
             }else if (i == 7){
                 model.addAttribute("query", prefixs +
                         "SELECT ?RouteName ?TravelTime\n" +
