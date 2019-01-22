@@ -29,7 +29,7 @@ public class RDFgenerator {
         Model model = ModelFactory.createDefaultModel();
         final String rdfs = "http://www.w3.org/2000/01/rdf-schema#";
         final String dbo = "http://dbpedia.org/ontology/";
-        final String db = "dbpedia.org/resource/";
+        final String db = "http://dbpedia.org/resource/";
         final String geo = "http://www.w3.org/2003/01/geo/wgs84_pos#";
         final String Proute = "http://localhost/route#";
         final String Ptrip = "http://localhost/trip#";
