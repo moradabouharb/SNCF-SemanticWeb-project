@@ -2,30 +2,80 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1ef9ca9-a500-40a6-a6cf-a20fe108f005" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/SemanticWeb/SNCF/Controller/TurtleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SemanticWeb/SNCF/Controller/TurtleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/route.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/route.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/stops.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/stops.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/trips.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/trips.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/route.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/route.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/stops.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/stops.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/trips.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/trips.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="703537481">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="40" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="40" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/TurtleController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="137">
               <caret line="207" column="28" selection-start-line="207" selection-start-column="28" selection-end-line="207" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#973#981#0" expanded="true" />
-                <element signature="e#2600#2601#0" expanded="true" />
-                <element signature="e#2648#2649#0" expanded="true" />
-                <element signature="e#3459#3467#0" expanded="true" />
-                <element signature="e#7623#7637#0" expanded="true" />
-                <element signature="e#7820#7828#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/route.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/stops.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/trips.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -33,7 +83,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/RDFgenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
+            <state relative-caret-position="735">
               <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
             </state>
           </provider>
@@ -42,7 +92,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/service/Service1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-462">
+            <state relative-caret-position="378">
               <caret line="18" column="27" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -54,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SemanticWeb/SNCF/Controller/info.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
+            <state relative-caret-position="630">
               <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
             </state>
           </provider>
@@ -64,6 +114,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/resources/templates/route.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/stops.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/trips.html" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -83,6 +142,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,9 +222,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548200773021" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -183,7 +245,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3d14a438-084b-46c9-8e1c-b2052733d3a2" name="Default Changelist" comment="" />
+      <changelist id="b1ef9ca9-a500-40a6-a6cf-a20fe108f005" name="Default Changelist" comment="" />
       <created>1547305702085</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -204,16 +266,17 @@
       <workItem from="1547898546203" duration="1234000" />
       <workItem from="1547987063941" duration="101000" />
       <workItem from="1548093826455" duration="3647000" />
+      <workItem from="1548200233337" duration="539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="690000" />
+    <option name="totallyTimeSpent" value="979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22214764" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22550336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -273,5 +336,28 @@
         <watch expression="((StatementImpl)stmlist.get(0)).model" custom="org.apache.jena.rdf.model.impl.StatementImpl" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/route.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/stops.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/trips.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
