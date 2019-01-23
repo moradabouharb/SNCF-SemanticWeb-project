@@ -1,12 +1,10 @@
 package SemanticWeb.SNCF.service;
-
 import SemanticWeb.SNCF.Utility.TextfileParser;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.XSD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.List;
