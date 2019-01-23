@@ -27,16 +27,14 @@ public class TurtleController {
     private List<String> formats = new ArrayList<String>(Arrays.asList("TURTLE", "TTL", "Turtle", "N-TRIPLES", "N-TRIPLE", "NT", "JSON-LD", "RDF/XML-ABBREV", "RDF/XML", "N3", "RDF/JSON"));
     final String owl = "http://dbpedia.org/ontology/";
     String prefixs = "prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> \n" +
-            "prefix xsdTime: <http://www.w3.org/2001/XMLSchema#time> \n" +
             "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n" +
             "prefix dbo:   <http://dbpedia.org/ontology/> \n" +
             "prefix Proute: <http://localhost/route#> \n" +
             "prefix latitude: <http://www.w3.org/2003/01/geo/wgs84_pos#lat> \n" +
             "prefix Ptrip: <http://localhost/trip#> \n" +
             "prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> \n" +
-            "prefix xsdString: <http://www.w3.org/2001/XMLSchema#string> \n" +
+            "prefix xsd:   <http://www.w3.org/2001/XMLSchema#> \n" +
             "prefix db:    <http://dbpedia.org/resource/> \n" +
-            "prefix xsd: <http://www.w3.org/2001/XMLSchema> \n" +
             "prefix longitude: <http://www.w3.org/2003/01/geo/wgs84_pos#long> \n" +
             "prefix Pstop: <http://localhost/stop#> \n\n\n"
             ;
@@ -124,13 +122,14 @@ public class TurtleController {
                         "limit 20");
             }else if (i == 6){
                 model.addAttribute("query", prefixs +
+                        "\n" +
                         "SELECT ?Travel_time ?Stop_Station\n" +
                         "WHERE {\n" +
                         "?trip dbo:Time_travel ?Travel_time ;\n" +
-                        "dbo:endPoint Pstop:StopPointOCETrainTER-87775288.\n" +
-                        "Pstop:StopPointOCETrainTER-87775288 rdfs:label ?Stop_Station;\n" +
+                        "dbo:endPoint ?x.\n" +
+                        "?x rdfs:label ?Stop_Station;\n" +
                         "filter(?Travel_time = \"10:01:00\"^^xsd:time)\n" +
-                        "}\n");
+                        "}");
             }else if (i == 7){
                 model.addAttribute("query", prefixs +
                         "SELECT ?RouteName ?TravelTime\n" +
