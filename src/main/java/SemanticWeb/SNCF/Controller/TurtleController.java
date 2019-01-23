@@ -40,7 +40,6 @@ public class TurtleController {
             "prefix longitude: <http://www.w3.org/2003/01/geo/wgs84_pos#long> \n" +
             "prefix Pstop: <http://localhost/stop#> \n\n\n"
             ;
-
     @Autowired
     private RDFgenerator RG;
 
@@ -62,7 +61,6 @@ public class TurtleController {
         return RG.Getmodeltext(RG.RDF());
     }
 
-
     @GetMapping("/query3")
     public String GetUserFileQuery(Model model){
         model.addAttribute("formats", formats);
@@ -75,15 +73,10 @@ public class TurtleController {
         org.apache.jena.rdf.model.Model modelJena1 = ModelFactory.createDefaultModel();
         org.apache.jena.rdf.model.Model modelJena = ModelFactory.createDefaultModel();
         modelJena1.read(file.getInputStream(), "");
-//        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-//        modelJena.write(byteArrayOutputStream);
         String result = "";
         List<String> strings = new ArrayList<String>();
-
-
         Query queryJena = QueryFactory.create(query);
         QueryExecution queryExecution = QueryExecutionFactory.create(queryJena, modelJena1);
-
         try{
             ResultSet resultSet = queryExecution.execSelect();
             String str = "";
@@ -92,11 +85,9 @@ public class TurtleController {
                 str = querySolution.toString();
                 strings.add(str);
             }
-
         } finally {
             queryExecution.close();
         }
-
         model.addAttribute("formats", formats);
         model.addAttribute("query", query);
         model.addAttribute("result", result);
@@ -108,7 +99,6 @@ public class TurtleController {
     public String GetLocalQuery(@RequestParam(value = "button", required = false) String btn, Model model){
         if (!StringUtils.isEmpty(btn)){
             int i = Integer.parseInt(btn);
-
             if (i == 4){
                 model.addAttribute("query", prefixs +
                         "SELECT  ?NameofRoute ?NameofStopStation ?latitude ?longitude ?TimeTravel\n" +
@@ -168,14 +158,11 @@ public class TurtleController {
     @PostMapping("/query1")
     public String PostLocalQuery(@RequestParam("query") String query, Model model){
         model.addAttribute("formats", formats);
-
         org.apache.jena.rdf.model.Model model1 = RG.RDF();
-
         Query queryJena = QueryFactory.create(query);
         QueryExecution queryExecution = QueryExecutionFactory.create(queryJena, model1);
         List<Var> vars = queryJena.getProjectVars();
         List<List<String>> data = new ArrayList<List<String>>();
-
         try{
             ResultSet resultSet = queryExecution.execSelect();
 
@@ -192,15 +179,12 @@ public class TurtleController {
                     }
                     data.add(strings);
                 }
-
         } finally {
             queryExecution.close();
         }
-
         model.addAttribute("vars", vars);
         model.addAttribute("data", data);
         model.addAttribute("query", query);
-
         return "query1";
     }
 
