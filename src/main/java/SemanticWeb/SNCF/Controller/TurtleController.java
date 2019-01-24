@@ -140,14 +140,12 @@ public class TurtleController {
                         "limit 20");
             }else if (i == 8){
                 model.addAttribute("query", prefixs +
-                        "SELECT ?Travel_time ?Stop_Station\n" +
+                        "SELECT ?Travel_time\n" +
                         "WHERE {\n" +
                         "?trip dbo:Time_travel ?Travel_time ;\n" +
                         "dbo:endPoint ?stop_point.\n" +
-                        "?stop_point rdfs:label ?Stop_Station.\n" +
-                        "\n" +
-                        "}\n" +
-                        "limit 20");
+                        "?stop_point rdfs:label \"Saint-Étienne-de-Cuines\".\n" +
+                        "}");
             }
         }
         return "query1";
