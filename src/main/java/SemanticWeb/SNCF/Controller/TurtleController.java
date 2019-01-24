@@ -1,5 +1,4 @@
 package SemanticWeb.SNCF.Controller;
-
 import SemanticWeb.SNCF.Utility.TextfileParser;
 import SemanticWeb.SNCF.service.RDFgenerator;
 import SemanticWeb.SNCF.service.Service1;

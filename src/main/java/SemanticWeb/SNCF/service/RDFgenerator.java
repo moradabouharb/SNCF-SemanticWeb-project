@@ -56,7 +56,7 @@ public class RDFgenerator {
 
         for(int i=1; i<list1.get(0).size(); i++) {
             Resource route = model.createProperty(Proute,list1.get(0).get(i));
-            Literal routename = model.createTypedLiteral(list1.get(1).get(i),XSD.xstring.getURI());
+            Literal routename = model.createTypedLiteral(list1.get(1).get(i).replaceAll("^.|.$", ""),XSD.xstring.getURI());
             model.add(route,routelebel,routename);
             model.add(route,rdftype,routeOfTransportation);
         }
@@ -70,7 +70,7 @@ public class RDFgenerator {
                     .replaceAll("\\s+","").replace(":",""));
             Literal latitudelet = model.createTypedLiteral(list3.get(2).get(i),XSD.decimal.getURI());
             Literal longitudelet = model.createTypedLiteral(list3.get(3).get(i),XSD.decimal.getURI());
-            Literal endpointname = model.createTypedLiteral(list3.get(1).get(i),XSD.xstring.getURI());
+            Literal endpointname = model.createTypedLiteral(list3.get(1).get(i).replaceAll("^.|.$", ""),XSD.xstring.getURI());
             model.add(stop, routelebel, endpointname);
             model.add(stop, lat, latitudelet);
             model.add(stop, longi, longitudelet);
